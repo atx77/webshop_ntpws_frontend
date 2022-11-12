@@ -12,6 +12,7 @@ import { UserService } from './user/user.service';
 export class AppComponent {
   
   title = 'NTPWS webshop';
+
   faSearch = faSearch;
   faShoppingCart = faShoppingCart;
   faUserPlus = faUserPlus;
@@ -19,6 +20,8 @@ export class AppComponent {
   faCopyright = faCopyright;
   faUserCircle = faUserCircle;
   faPowerOff = faPowerOff;
+
+  searchText: string;
 
   constructor(private router: Router,
     private loginService: LoginService,
@@ -32,5 +35,9 @@ export class AppComponent {
 
   isUserLoggedIn(): boolean {
     return this.userService.isUserLoggedIn();
+  }
+
+  search(): void {
+    this.router.navigate(['search', this.searchText]);
   }
 }

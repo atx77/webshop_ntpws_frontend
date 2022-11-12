@@ -37,6 +37,10 @@ export class ApiConstants {
         return this.API_URL_HOST + '/search/' + text;
     }
 
+    getSearchFilters(categoryCode: string): string {
+        return this.API_URL_HOST + '/search/' + categoryCode + '/all-filters'
+    }
+
     getProduct(productCode: string) {
         return this.API_URL_HOST + '/product/' + productCode;
     }

@@ -11,9 +11,9 @@
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="get" action="/search">
                     <div class="input-group">
-                        <input type="text" name="text" class="form-control form-control-dark" placeholder="Pretraži..."
+                        <input [(ngModel)]="searchText" type="text" name="text" class="form-control form-control-dark" placeholder="Pretraži..."
                             aria-label="Search" aria-describedby="search-icon">
-                        <button type="submit" class="input-group-text" id="search-icon">
+                        <button type="button" class="input-group-text" id="search-icon" (click)="search()">
                             <fa-icon [icon]="faSearch"></fa-icon>
                         </button>
                     </div>

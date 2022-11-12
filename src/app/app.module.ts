@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { CategoryPageComponent } from './category-page/category-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
     LoginComponent,
     CategoryPageComponent,
     ProductListComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
