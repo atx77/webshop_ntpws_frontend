@@ -13,6 +13,7 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
     CategoryPageComponent,
     ProductListComponent,
     ProductPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductFilterResult } from '../model/product-filter-result.model';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FilterProductsForm } from '../model/form/filter-products-form.model';
 import { CategoryPageService } from '../category-page/category-page.service';
 import { Product } from '../model/product.model';
@@ -20,6 +20,7 @@ export class ProductListComponent implements OnInit {
   @Input() searchQuery: string;
 
   faCartPlus = faCartPlus;
+  faFilter = faFilter;
   filterProductsFormModel: FilterProductsForm;
 
   constructor(private categoryPageService: CategoryPageService,
