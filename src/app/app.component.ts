@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { faSearch, faShoppingCart, faUserPlus, faArrowRight, faCopyright, faUserCircle, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from './login/login.service';
+import { UserService } from './user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webshop-ntpws';
+  
+  title = 'NTPWS webshop';
+  faSearch = faSearch;
+  faShoppingCart = faShoppingCart;
+  faUserPlus = faUserPlus;
+  faArrowRight = faArrowRight;
+  faCopyright = faCopyright;
+  faUserCircle = faUserCircle;
+  faPowerOff = faPowerOff;
+
+  constructor(private router: Router,
+    private loginService: LoginService,
+    private userService: UserService) {}
+
+  logout() {
+    this.loginService.logout();
+    this.userService.setLoggedUser(null);
+    this.router.navigate(['/']);
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.userService.isUserLoggedIn();
+  }
 }
