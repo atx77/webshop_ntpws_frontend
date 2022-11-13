@@ -56,7 +56,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {

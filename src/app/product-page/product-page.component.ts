@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Observable, Subscription } from 'rxjs';
 import { CartService } from '../cart-page/cart.service';
@@ -21,10 +21,11 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
     private productPageService: ProductPageService,
-    private cartService: CartService) { }
+    private cartService: CartService,
+    private router: Router) { }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -37,6 +38,10 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   }
 
   addToCart(productCode: string) {
-    this.subscription = this.cartService.addProductToCart(productCode, 1).subscribe(() => {});
+    this.subscription = this.cartService.addProductToCart(productCode, 1).subscribe(
+      result => {},
+      error => {
+      this.router.navigate(['login'])
+    });
   }
 }

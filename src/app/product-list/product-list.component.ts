@@ -7,6 +7,7 @@ import { CategoryPageService } from '../category-page/category-page.service';
 import { Product } from '../model/product.model';
 import { SearchPageService } from '../search-page/search-page.service';
 import { CartService } from '../cart-page/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -27,10 +28,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(private categoryPageService: CategoryPageService,
     private searchPageService: SearchPageService,
-    private cartService: CartService) { }
+    private cartService: CartService,
+    private router: Router) { }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -62,6 +64,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   addToCart(productCode: string) {
-    this.subscription = this.cartService.addProductToCart(productCode, 1).subscribe(() => {});
+    this.subscription = this.cartService.addProductToCart(productCode, 1)
+    .subscribe(
+      result => {},
+      error => {
+      this.router.navigate(['login'])
+    });
   }
 }

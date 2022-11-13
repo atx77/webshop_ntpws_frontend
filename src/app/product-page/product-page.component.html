@@ -1,7 +1,9 @@
 <div *ngIf="product$ | async as product">
     <div class="row">
-        <div class="col-md-6 border-end">
-            <img src="{{product.imageUrl}}" class="w-100" />
+        <div class="col-md-6 border-end d-flex justify-content-center">
+            <div class="pdp-img-wrapper">
+                <img src="{{product.imageUrl}}" class="w-100" />
+            </div>
         </div>
         <div class="col-md-6">
             <div class="my-3">
