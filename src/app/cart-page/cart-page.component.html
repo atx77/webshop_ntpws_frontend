@@ -65,7 +65,17 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <button (click)="removeProduct(cartItem.product.code)" type="button" class="btn btn-danger">
+                    <div class="input-group mx-5">
+                        <div class="input-group-prepend">
+                            <button (click)="decreaseProductQuantity(cartItem.product.code, cartItem.quantity)" class="btn btn-secondary" id="minus-btn" type="button"><fa-icon [icon]="faMinus"></fa-icon></button>
+                        </div>
+                        <input value="{{cartItem.quantity}}" disabled type="number" id="qty_input" class="form-control ml-1 mr-1" style="width: 75px;" min="0" step="1">
+                        <div class="input-group-prepend">
+                            <button (click)="increaseProductQuantity(cartItem.product.code, cartItem.quantity)" class="btn btn-success" id="plus-btn" type="button"><fa-icon [icon]="faPlus"></fa-icon></button>
+                        </div>
+                    </div>
+
+                    <button (click)="removeProduct(cartItem.product.code)" type="button" class="btn btn-danger d-flex">
                         <fa-icon [icon]="faMinusCircle"></fa-icon>&nbsp;Obriši
                     </button>
                 </div>

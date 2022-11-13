@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { faCaretRight, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight, faMinusCircle, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { Cart } from '../model/cart.model';
 import { CartService } from './cart.service';
@@ -16,6 +16,8 @@ export class CartPageComponent implements OnInit {
 
   faCaretRight = faCaretRight;
   faMinusCircle = faMinusCircle;
+  faPlus = faPlus;
+  faMinus = faMinus;
 
   constructor(private route: ActivatedRoute,
     private cartService: CartService) { }
@@ -32,7 +34,15 @@ export class CartPageComponent implements OnInit {
     this.cart$ = this.cartService.removeProductFromCart(productCode);
   }
 
-  // changeProductQuantity(productCode: string) {
-  //   this.cart$ = this.cartService.changeProductQuantityInCart(productCode)
-  // }
+  decreaseProductQuantity(productCode: string, currentQuantity: number) {
+    this.changeProductQuantity(productCode, currentQuantity-1);
+  }
+
+  increaseProductQuantity(productCode: string, currentQuantity: number) {
+    this.changeProductQuantity(productCode, currentQuantity+1);
+  }
+
+  changeProductQuantity(productCode: string, quantity: number) {
+    this.cart$ = this.cartService.changeProductQuantityInCart(productCode, quantity)
+  }
 }
