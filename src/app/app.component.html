@@ -30,7 +30,7 @@
                         <fa-icon [icon]="faUserPlus"></fa-icon>&nbsp;Registracija
                     </a>
 
-                    <a routerLink="/my-account" *ngIf="isUserLoggedIn()" class="btn btn-outline-light">
+                    <a routerLink="/account" *ngIf="isUserLoggedIn()" class="btn btn-outline-light">
                         <fa-icon [icon]="faUserCircle"></fa-icon>&nbsp;Moj profil
                     </a>
                     <a *ngIf="isUserLoggedIn()" class="btn btn-outline-light" (click)="logout()">

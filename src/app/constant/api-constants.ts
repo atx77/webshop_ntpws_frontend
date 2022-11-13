@@ -69,7 +69,11 @@ export class ApiConstants {
         return this.API_URL_HOST + '/order/' + orderCode;
     }
 
-    getAllOrdersForLoggedCustomer(orderCode: string) {
+    getAllOrdersForLoggedCustomer() {
         return this.API_URL_HOST + '/order/get-all';
+    }
+
+    updatePersonalInformation() {
+        return this.API_URL_HOST + '/account/update';
     }
 }

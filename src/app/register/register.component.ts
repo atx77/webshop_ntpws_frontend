@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RegisterCustomerModel } from '../model/request/register-customer.model';
 import { RegisterService } from './register.service';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +15,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
   registerCustomerModel: RegisterCustomerModel;
   registrationFailed = false;
   subscribtion: Subscription;
+  
+  faExclamationCircle = faExclamationCircle;
 
   constructor(private router: Router,
     private registerService: RegisterService) { }

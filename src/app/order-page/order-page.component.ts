@@ -28,5 +28,4 @@ export class OrderPageComponent implements OnInit {
   getOrder(code: string) {
     this.order$ = this.orderPageService.getOrderByCode(code);
   }
-
 }

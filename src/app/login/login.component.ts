@@ -5,6 +5,7 @@ import { LoginCredentials } from '../model/request/login-credential.model';
 import { User } from '../model/user.model';
 import { UserService } from '../user/user.service';
 import { LoginService } from './login.service';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,8 @@ export class LoginComponent implements OnInit {
 
   loginCredentials: LoginCredentials;
   loginFailed = false;
+
+  faExclamationCircle = faExclamationCircle;
 
   constructor(
     private loginService: LoginService,

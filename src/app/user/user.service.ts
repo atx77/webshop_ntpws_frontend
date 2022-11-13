@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiConstants } from '../constant/api-constants';
+import { UpdatePersonalInformationForm } from '../model/form/update-personal-information-form.model';
 import { User } from '../model/user.model';
 
 @Injectable({
@@ -24,5 +25,9 @@ export class UserService {
 
   isUserLoggedIn(): boolean {
     return !!this.loggedUser;
+  }
+
+  updatePersonalInformation(updatePersonalInformationForm: UpdatePersonalInformationForm): Observable<string> {
+    return this.http.post<string>(this.apiConstants.updatePersonalInformation(), updatePersonalInformationForm);
   }
 }

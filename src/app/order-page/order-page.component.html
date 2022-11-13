@@ -4,10 +4,7 @@
             <h3>Pregled narudžbe br. {{order.code}}</h3>
         </div>
         <div class="text-end">
-
-            <a routerLink="/account" class="btn btn-outline-primary"><i
-                    class="fa-solid fa-caret-left"></i>&nbsp;Povratak na profil</a>
-
+            <a routerLink="/account" class="btn btn-outline-primary"><fa-icon [icon]="faCaretLeft"></fa-icon>&nbsp;Povratak na profil</a>
         </div>
     </div>
     <hr>
@@ -74,7 +71,7 @@
                 <div class="justify-content-center ms-3">
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="text-decoration-none text-dark" href="/product/{{orderItem.product.code}}">
+                            <a class="text-decoration-none text-dark" routerLink="/product/{{orderItem.product.code}}">
                                 <h5>{{orderItem.product.name}}</h5>
                             </a>
                         </div>

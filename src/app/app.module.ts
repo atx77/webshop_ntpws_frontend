@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderPageComponent } from './order-page/order-page.component';
+import { AccountPageComponent } from './account-page/account-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { OrderPageComponent } from './order-page/order-page.component';
     RegisterComponent,
     CartPageComponent,
     CheckoutPageComponent,
-    OrderPageComponent
+    OrderPageComponent,
+    AccountPageComponent
   ],
   imports: [
     BrowserModule,
