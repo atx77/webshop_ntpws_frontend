@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtToken } from '../model/jwt-token.model';
-import { LoginCredentials } from '../model/login-credential.model';
+import { LoginCredentials } from '../model/request/login-credential.model';
 import { User } from '../model/user.model';
 import { UserService } from '../user/user.service';
 import { LoginService } from './login.service';

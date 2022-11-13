@@ -21,8 +21,7 @@
                 <div class="text-end">
 
                     <a class="btn btn-outline-light me-2" routerLink="/cart">
-                        <fa-icon [icon]="faShoppingCart"></fa-icon>&nbsp;
-                        {{0 | currency:'HRK':'symbol-narrow'}}
+                        <fa-icon [icon]="faShoppingCart"></fa-icon>&nbsp;Košarica
                     </a>
                     <a routerLink="/login" *ngIf="!isUserLoggedIn()" class="btn btn-outline-light me-2">
                         <fa-icon [icon]="faArrowRight"></fa-icon>&nbsp;Prijava

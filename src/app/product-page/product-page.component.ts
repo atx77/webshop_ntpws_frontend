@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { CartService } from '../cart-page/cart.service';
 import { Product } from '../model/product.model';
 import { ProductPageService } from './product-page.service';
 
@@ -10,15 +11,21 @@ import { ProductPageService } from './product-page.service';
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.css']
 })
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent implements OnInit, OnDestroy {
 
   product$: Observable<Product>;
   productCode: string;
+  subscription: Subscription;
 
   faCartPlus = faCartPlus;
 
   constructor(private route: ActivatedRoute,
-    private productPageService: ProductPageService) { }
+    private productPageService: ProductPageService,
+    private cartService: CartService) { }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(): void {
     this.productCode = this.route.snapshot.paramMap.get('code');
@@ -27,5 +34,9 @@ export class ProductPageComponent implements OnInit {
 
   getProduct(code: string) {
     this.product$ = this.productPageService.getProduct(code);
+  }
+
+  addToCart(productCode: string) {
+    this.subscription = this.cartService.addProductToCart(productCode, 1).subscribe(() => {});
   }
 }

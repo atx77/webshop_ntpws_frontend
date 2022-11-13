@@ -44,4 +44,32 @@ export class ApiConstants {
     getProduct(productCode: string) {
         return this.API_URL_HOST + '/product/' + productCode;
     }
+
+    getCart() {
+        return this.API_URL_HOST + '/cart';
+    }
+
+    removeProductFromCart() {
+        return this.API_URL_HOST + '/cart/remove';
+    }
+
+    changeProductQuantityInCart() {
+        return this.API_URL_HOST + '/cart/change-quantity';
+    }
+
+    addProductToCart() {
+        return this.API_URL_HOST + '/cart/add';
+    }
+
+    createOrder() {
+        return this.API_URL_HOST + '/order';
+    }
+
+    getOrderByCode(orderCode: string) {
+        return this.API_URL_HOST + '/order/' + orderCode;
+    }
+
+    getAllOrdersForLoggedCustomer(orderCode: string) {
+        return this.API_URL_HOST + '/order/get-all';
+    }
 }

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { RegisterCustomerModel } from '../model/register-customer.model';
+import { RegisterCustomerModel } from '../model/request/register-customer.model';
 import { RegisterService } from './register.service';
 
 @Component({

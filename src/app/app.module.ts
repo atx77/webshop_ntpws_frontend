@@ -14,6 +14,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { RegisterComponent } from './register/register.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { OrderPageComponent } from './order-page/order-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { RegisterComponent } from './register/register.component';
     ProductListComponent,
     ProductPageComponent,
     SearchPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    CartPageComponent,
+    CheckoutPageComponent,
+    OrderPageComponent
   ],
   imports: [
     BrowserModule,

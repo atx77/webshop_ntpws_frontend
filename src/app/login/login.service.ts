@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiConstants } from '../constant/api-constants';
 import { JwtToken } from '../model/jwt-token.model';
-import { LoginCredentials } from '../model/login-credential.model';
+import { LoginCredentials } from '../model/request/login-credential.model';
 
 @Injectable({
   providedIn: 'root'

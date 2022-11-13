@@ -2,17 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiConstants } from '../constant/api-constants';
-import { RegisterCustomerModel } from '../model/request/register-customer.model';
+import { Order } from '../model/order.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterService {
+export class OrderPageService {
 
   constructor(private httpClient: HttpClient,
     private apiConstants: ApiConstants) { }
 
-  register(registerCustomerModel: RegisterCustomerModel): Observable<string> {
-    return this.httpClient.post<string>(this.apiConstants.register(), registerCustomerModel);
+  getOrderByCode(code: string): Observable<Order> {
+    return this.httpClient.get<Order>(this.apiConstants.getOrderByCode(code));
   }
 }
