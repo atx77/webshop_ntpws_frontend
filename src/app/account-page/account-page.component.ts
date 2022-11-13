@@ -15,7 +15,7 @@ import { faInfoCircle, faAngleDown, faUserCircle } from '@fortawesome/free-solid
 export class AccountPageComponent implements OnInit, OnDestroy {
 
   updatePersonalInformationFormModel: UpdatePersonalInformationForm;
-  subscribtion: Subscription;
+  subscription: Subscription;
   orders$: Observable<Order[]>;
   loggedUser$: Observable<User>;
 
@@ -30,18 +30,18 @@ export class AccountPageComponent implements OnInit, OnDestroy {
     this.updatePersonalInformationFormModel = new UpdatePersonalInformationForm();
     this.loggedUser$ = this.userService.getLoggedUser();
     this.orders$ = this.accountPageService.getAllOrders();
-    this.subscribtion = this.loggedUser$.subscribe((user: User) => {
+    this.subscription = this.loggedUser$.subscribe((user: User) => {
       this.updatePersonalInformationFormModel.firstName = user.firstName;
       this.updatePersonalInformationFormModel.lastName = user.lastName;
     })
   }
 
   ngOnDestroy(): void {
-    this.subscribtion.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
 
   updatePersonalInformation(): void {
-    this.subscribtion = this.userService.updatePersonalInformation(this.updatePersonalInformationFormModel)
+    this.subscription = this.userService.updatePersonalInformation(this.updatePersonalInformationFormModel)
       .subscribe(() => {});
   }
 }

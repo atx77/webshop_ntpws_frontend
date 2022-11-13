@@ -1,3 +1,5 @@
+<div id="alert-message-wrapper" class="px-4 my-2 position-fixed" style="top: 10px; right: 10px; z-index: 9999;">
+</div>
 <div class="container-fluid mt-5 mb-5">
     <div class="row g-2">
         <div class="col-md-3" *ngIf="filtersResult$ | async as filtersResult">
@@ -102,7 +104,7 @@
 
                             </p>
 
-                            <div (click)="addToCart(product.code)" class="btn btn-primary w-100 my-1">
+                            <div (click)="addToCart(product.code, product.name)" class="btn btn-primary w-100 my-1">
                                 <fa-icon [icon]="faCartPlus"></fa-icon>&nbsp;Dodaj u košaricu
                             </div>
 

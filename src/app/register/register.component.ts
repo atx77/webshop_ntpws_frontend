@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   registerCustomerModel: RegisterCustomerModel;
   registrationFailed = false;
-  subscribtion: Subscription;
+  subscription: Subscription;
   
   faExclamationCircle = faExclamationCircle;
 
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     private registerService: RegisterService) { }
 
   ngOnDestroy(): void {
-    this.subscribtion.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   register(): void {
-    this.subscribtion = this.registerService.register(this.registerCustomerModel).subscribe(
+    this.subscription = this.registerService.register(this.registerCustomerModel).subscribe(
       result => {},
       error => this.registrationFailed = true,
       () => this.router.navigate(['/'])

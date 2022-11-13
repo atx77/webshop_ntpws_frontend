@@ -37,11 +37,19 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.product$ = this.productPageService.getProduct(code);
   }
 
-  addToCart(productCode: string) {
+  addToCart(productCode: string, productName: string) {
     this.subscription = this.cartService.addProductToCart(productCode, 1).subscribe(
-      result => {},
+      result => {
+        this.addAlert(productName);
+      },
       error => {
       this.router.navigate(['login'])
     });
+  }
+
+  addAlert(productName: string) {
+    var alertHtml = '<div class="alert alert-dismissible alert-success" role="alert">&nbsp;Dodali ste proizvod \'' + productName + '\' u košaricu<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    var wrapper = document.getElementById('alert-message-wrapper');
+    wrapper.insertAdjacentHTML('beforeend', alertHtml);
   }
 }
