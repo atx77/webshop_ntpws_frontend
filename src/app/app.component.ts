@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { faSearch, faShoppingCart, faUserPlus, faArrowRight, faCopyright, faUserCircle, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCopyright, faPowerOff, faSearch, faShoppingCart, faUserCircle, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { LoginService } from './login/login.service';
 import { UserService } from './user/user.service';
 

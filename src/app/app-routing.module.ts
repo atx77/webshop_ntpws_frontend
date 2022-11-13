@@ -4,6 +4,7 @@ import { AccountPageComponent } from './account-page/account-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { HomepageComponent } from './homepage/homepage.component';
 import { LoggedInAuthGuardService } from './interceptor/logged-in-auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { OrderPageComponent } from './order-page/order-page.component';
@@ -13,6 +14,10 @@ import { SearchPageComponent } from './search-page/search-page.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomepageComponent
+  },
   {
     path: 'login',
     component: LoginComponent

@@ -45,6 +45,10 @@ export class ApiConstants {
         return this.API_URL_HOST + '/product/' + productCode;
     }
 
+    getNewestProducts() {
+        return this.API_URL_HOST + '/product/newest';
+    }
+
     getCart() {
         return this.API_URL_HOST + '/cart';
     }
@@ -75,5 +79,9 @@ export class ApiConstants {
 
     updatePersonalInformation() {
         return this.API_URL_HOST + '/account/update';
+    }
+
+    getBanners() {
+        return this.API_URL_HOST + '/banner';
     }
 }

@@ -18,6 +18,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { AccountPageComponent } from './account-page/account-page.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AccountPageComponent } from './account-page/account-page.component';
     CartPageComponent,
     CheckoutPageComponent,
     OrderPageComponent,
-    AccountPageComponent
+    AccountPageComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
